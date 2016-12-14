@@ -12,6 +12,8 @@
 		743135DB1E005A8700984253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743135D91E005A8700984253 /* Main.storyboard */; };
 		743135DD1E005A8700984253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 743135DC1E005A8700984253 /* Assets.xcassets */; };
 		743135E01E005A8700984253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743135DE1E005A8700984253 /* LaunchScreen.storyboard */; };
+		74E659381E018CC50040424D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74E659371E018CC50040424D /* GoogleService-Info.plist */; };
+		9D376549DA8B2BE297543E19 /* Pods_Focacia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F581451180996D8E47132E /* Pods_Focacia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +23,10 @@
 		743135DA1E005A8700984253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		743135DC1E005A8700984253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		743135DF1E005A8700984253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		743135E11E005A8700984253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E659371E018CC50040424D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84F581451180996D8E47132E /* Pods_Focacia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Focacia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C17E692B53C25AF00D5720F /* Pods-Focacia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Focacia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Focacia/Pods-Focacia.release.xcconfig"; sourceTree = "<group>"; };
+		D560480793027C18F8F83FE7 /* Pods-Focacia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Focacia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Focacia/Pods-Focacia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +34,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D376549DA8B2BE297543E19 /* Pods_Focacia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6796A611E7565402CC566D07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84F581451180996D8E47132E /* Pods_Focacia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		743135C91E005A8600984253 = {
 			isa = PBXGroup;
 			children = (
 				743135D41E005A8600984253 /* Focacia */,
 				743135D31E005A8600984253 /* Products */,
+				FC98BDDCB6D4B739AD34CED2 /* Pods */,
+				6796A611E7565402CC566D07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +70,23 @@
 		743135D41E005A8600984253 /* Focacia */ = {
 			isa = PBXGroup;
 			children = (
+				74E659371E018CC50040424D /* GoogleService-Info.plist */,
 				743135D51E005A8600984253 /* AppDelegate.swift */,
 				743135D71E005A8700984253 /* ViewController.swift */,
 				743135D91E005A8700984253 /* Main.storyboard */,
 				743135DC1E005A8700984253 /* Assets.xcassets */,
 				743135DE1E005A8700984253 /* LaunchScreen.storyboard */,
-				743135E11E005A8700984253 /* Info.plist */,
 			);
 			path = Focacia;
+			sourceTree = "<group>";
+		};
+		FC98BDDCB6D4B739AD34CED2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D560480793027C18F8F83FE7 /* Pods-Focacia.debug.xcconfig */,
+				9C17E692B53C25AF00D5720F /* Pods-Focacia.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +96,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 743135E41E005A8700984253 /* Build configuration list for PBXNativeTarget "Focacia" */;
 			buildPhases = (
+				39771F135E0BBCEFE1341DA7 /* [CP] Check Pods Manifest.lock */,
 				743135CE1E005A8600984253 /* Sources */,
 				743135CF1E005A8600984253 /* Frameworks */,
 				743135D01E005A8600984253 /* Resources */,
+				2CF3A66B4D862568B086041A /* [CP] Embed Pods Frameworks */,
+				4F646883C5774E47F241835A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,12 +152,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				743135E01E005A8700984253 /* LaunchScreen.storyboard in Resources */,
+				74E659381E018CC50040424D /* GoogleService-Info.plist in Resources */,
 				743135DD1E005A8700984253 /* Assets.xcassets in Resources */,
 				743135DB1E005A8700984253 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CF3A66B4D862568B086041A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Focacia/Pods-Focacia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39771F135E0BBCEFE1341DA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4F646883C5774E47F241835A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Focacia/Pods-Focacia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		743135CE1E005A8600984253 /* Sources */ = {
@@ -181,6 +258,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -230,6 +308,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -256,6 +335,7 @@
 		};
 		743135E51E005A8700984253 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D560480793027C18F8F83FE7 /* Pods-Focacia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Focacia/Info.plist;
@@ -268,6 +348,7 @@
 		};
 		743135E61E005A8700984253 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C17E692B53C25AF00D5720F /* Pods-Focacia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Focacia/Info.plist;
@@ -297,6 +378,7 @@
 				743135E61E005A8700984253 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

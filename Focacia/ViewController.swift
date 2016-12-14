@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        load();
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func load(){
+        var ref: FIRDatabaseReference!
+        
+        ref = FIRDatabase.database().reference()
+        ref.child("Pizza").child("Margarita").observe(FIRDataEventType.value, with: { (snapshot) in
+            let postDict = snapshot.value as? [String : String] ?? [:]
+            print(postDict)
+        })
+
     }
+    
+    @IBOutlet weak var label: UILabel!
+
 
 
 }
