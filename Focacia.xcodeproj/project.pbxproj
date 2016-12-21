@@ -7,22 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7426FB3E1E06E88400FB6216 /* AddPizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7426FB3D1E06E88400FB6216 /* AddPizzaViewController.swift */; };
 		743135D61E005A8600984253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743135D51E005A8600984253 /* AppDelegate.swift */; };
-		743135D81E005A8700984253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743135D71E005A8700984253 /* ViewController.swift */; };
+		743135D81E005A8700984253 /* PizzasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743135D71E005A8700984253 /* PizzasViewController.swift */; };
 		743135DB1E005A8700984253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743135D91E005A8700984253 /* Main.storyboard */; };
 		743135DD1E005A8700984253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 743135DC1E005A8700984253 /* Assets.xcassets */; };
 		743135E01E005A8700984253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743135DE1E005A8700984253 /* LaunchScreen.storyboard */; };
+		749C0BF11E0AC35600DC2F0F /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 749C0BF01E0AC35600DC2F0F /* README.MD */; };
+		74B571B71E05A1F20034047E /* PizzaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B571B61E05A1F20034047E /* PizzaView.xib */; };
+		74B571B91E05A2160034047E /* PizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B571B81E05A2160034047E /* PizzaView.swift */; };
 		74E659381E018CC50040424D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74E659371E018CC50040424D /* GoogleService-Info.plist */; };
 		9D376549DA8B2BE297543E19 /* Pods_Focacia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F581451180996D8E47132E /* Pods_Focacia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7426FB3D1E06E88400FB6216 /* AddPizzaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPizzaViewController.swift; sourceTree = "<group>"; };
 		743135D21E005A8600984253 /* Focacia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focacia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		743135D51E005A8600984253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		743135D71E005A8700984253 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		743135D71E005A8700984253 /* PizzasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzasViewController.swift; sourceTree = "<group>"; };
 		743135DA1E005A8700984253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		743135DC1E005A8700984253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		743135DF1E005A8700984253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7435C3CC1E054DD70021697A /* Focacia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Focacia-Bridging-Header.h"; sourceTree = "<group>"; };
+		749C0BF01E0AC35600DC2F0F /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
+		74B571B61E05A1F20034047E /* PizzaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PizzaView.xib; sourceTree = "<group>"; };
+		74B571B81E05A2160034047E /* PizzaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaView.swift; sourceTree = "<group>"; };
 		74E659371E018CC50040424D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84F581451180996D8E47132E /* Pods_Focacia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Focacia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C17E692B53C25AF00D5720F /* Pods-Focacia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Focacia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Focacia/Pods-Focacia.release.xcconfig"; sourceTree = "<group>"; };
@@ -49,9 +58,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7426FB3F1E06E89800FB6216 /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				74E659371E018CC50040424D /* GoogleService-Info.plist */,
+				743135D51E005A8600984253 /* AppDelegate.swift */,
+				743135DC1E005A8700984253 /* Assets.xcassets */,
+				743135DE1E005A8700984253 /* LaunchScreen.storyboard */,
+				7435C3CC1E054DD70021697A /* Focacia-Bridging-Header.h */,
+			);
+			name = Stuff;
+			sourceTree = "<group>";
+		};
+		7426FB401E06E8AD00FB6216 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				743135D71E005A8700984253 /* PizzasViewController.swift */,
+				7426FB3D1E06E88400FB6216 /* AddPizzaViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		743135C91E005A8600984253 = {
 			isa = PBXGroup;
 			children = (
+				749C0BF01E0AC35600DC2F0F /* README.MD */,
 				743135D41E005A8600984253 /* Focacia */,
 				743135D31E005A8600984253 /* Products */,
 				FC98BDDCB6D4B739AD34CED2 /* Pods */,
@@ -70,12 +101,11 @@
 		743135D41E005A8600984253 /* Focacia */ = {
 			isa = PBXGroup;
 			children = (
-				74E659371E018CC50040424D /* GoogleService-Info.plist */,
-				743135D51E005A8600984253 /* AppDelegate.swift */,
-				743135D71E005A8700984253 /* ViewController.swift */,
+				74B571B61E05A1F20034047E /* PizzaView.xib */,
+				74B571B81E05A2160034047E /* PizzaView.swift */,
+				7426FB3F1E06E89800FB6216 /* Stuff */,
+				7426FB401E06E8AD00FB6216 /* Controller */,
 				743135D91E005A8700984253 /* Main.storyboard */,
-				743135DC1E005A8700984253 /* Assets.xcassets */,
-				743135DE1E005A8700984253 /* LaunchScreen.storyboard */,
 			);
 			path = Focacia;
 			sourceTree = "<group>";
@@ -124,6 +154,7 @@
 				TargetAttributes = {
 					743135D11E005A8600984253 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -154,6 +185,8 @@
 				743135E01E005A8700984253 /* LaunchScreen.storyboard in Resources */,
 				74E659381E018CC50040424D /* GoogleService-Info.plist in Resources */,
 				743135DD1E005A8700984253 /* Assets.xcassets in Resources */,
+				749C0BF11E0AC35600DC2F0F /* README.MD in Resources */,
+				74B571B71E05A1F20034047E /* PizzaView.xib in Resources */,
 				743135DB1E005A8700984253 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +246,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				743135D81E005A8700984253 /* ViewController.swift in Sources */,
+				743135D81E005A8700984253 /* PizzasViewController.swift in Sources */,
+				7426FB3E1E06E88400FB6216 /* AddPizzaViewController.swift in Sources */,
+				74B571B91E05A2160034047E /* PizzaView.swift in Sources */,
 				743135D61E005A8600984253 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,10 +373,13 @@
 			baseConfigurationReference = D560480793027C18F8F83FE7 /* Pods-Focacia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Focacia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yegorsMac.Focacia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Focacia/Focacia-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -351,10 +389,12 @@
 			baseConfigurationReference = 9C17E692B53C25AF00D5720F /* Pods-Focacia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Focacia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yegorsMac.Focacia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Focacia/Focacia-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
