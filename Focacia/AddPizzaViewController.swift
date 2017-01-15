@@ -11,32 +11,40 @@ import FirebaseDatabase
 import Firebase
 import FirebaseStorage
 
-class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIGestureRecognizerDelegate{
+class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIGestureRecognizerDelegate,UIPickerViewDataSource, UIPickerViewDelegate{
     
     @IBOutlet weak var pizzaScrollView: UIScrollView!
     @IBOutlet weak var ingredientsField: UITextField!
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var categoryTextField: UITextField!
+    var pickerView = UIPickerView()
+    var Categories = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadCategories()
         let addImageTap = UITapGestureRecognizer(target: self, action: #selector(self.handleAdd(sender:)))
         
         addImageTap.delegate = self
         imageView.addGestureRecognizer(addImageTap)
         imageView.isUserInteractionEnabled = true
         
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        categoryTextField.inputView = pickerView
+    }
+    
+    
+    func configureKeyboard(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         pizzaScrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
-        //
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
     }
-    
-    
-    
-    
+
+
     @IBAction func dissmissView(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
         
@@ -44,6 +52,7 @@ class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func dismissKeyboard(){
         self.view.endEditing(false)
+        pickerView.isHidden = true
     }
     
     @IBOutlet weak var imageView: UIImageView!
@@ -128,4 +137,30 @@ class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
     
+    func loadCategories(){
+        let ref = FIRDatabase.database().reference().child("Food")
+        
+        ref.observe(.value, with: { (snapshot) in
+            
+            let enumerator = snapshot.children
+            while let snap = enumerator.nextObject() as? FIRDataSnapshot{
+                self.Categories.append(snap.key)
+            }
+        })
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Categories.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Categories[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoryTextField.text = Categories[row]
+    }
 }

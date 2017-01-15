@@ -13,6 +13,8 @@
 		743135DB1E005A8700984253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743135D91E005A8700984253 /* Main.storyboard */; };
 		743135DD1E005A8700984253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 743135DC1E005A8700984253 /* Assets.xcassets */; };
 		743135E01E005A8700984253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743135DE1E005A8700984253 /* LaunchScreen.storyboard */; };
+		747785ED1E25547100C65AE0 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747785EC1E25547100C65AE0 /* CollectionViewController.swift */; };
+		747786071E27F48500C65AE0 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747786051E27F48500C65AE0 /* CategoryViewCell.swift */; };
 		749C0BF11E0AC35600DC2F0F /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 749C0BF01E0AC35600DC2F0F /* README.MD */; };
 		74B571B71E05A1F20034047E /* PizzaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B571B61E05A1F20034047E /* PizzaView.xib */; };
 		74B571B91E05A2160034047E /* PizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B571B81E05A2160034047E /* PizzaView.swift */; };
@@ -29,6 +31,8 @@
 		743135DC1E005A8700984253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		743135DF1E005A8700984253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7435C3CC1E054DD70021697A /* Focacia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Focacia-Bridging-Header.h"; sourceTree = "<group>"; };
+		747785EC1E25547100C65AE0 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		747786051E27F48500C65AE0 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		749C0BF01E0AC35600DC2F0F /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
 		74B571B61E05A1F20034047E /* PizzaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PizzaView.xib; sourceTree = "<group>"; };
 		74B571B81E05A2160034047E /* PizzaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 		7426FB401E06E8AD00FB6216 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				747785EC1E25547100C65AE0 /* CollectionViewController.swift */,
 				743135D71E005A8700984253 /* PizzasViewController.swift */,
 				7426FB3D1E06E88400FB6216 /* AddPizzaViewController.swift */,
 			);
@@ -101,13 +106,22 @@
 		743135D41E005A8600984253 /* Focacia */ = {
 			isa = PBXGroup;
 			children = (
-				74B571B61E05A1F20034047E /* PizzaView.xib */,
-				74B571B81E05A2160034047E /* PizzaView.swift */,
+				747786041E27F45300C65AE0 /* Views */,
 				7426FB3F1E06E89800FB6216 /* Stuff */,
 				7426FB401E06E8AD00FB6216 /* Controller */,
 				743135D91E005A8700984253 /* Main.storyboard */,
 			);
 			path = Focacia;
+			sourceTree = "<group>";
+		};
+		747786041E27F45300C65AE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74B571B61E05A1F20034047E /* PizzaView.xib */,
+				74B571B81E05A2160034047E /* PizzaView.swift */,
+				747786051E27F48500C65AE0 /* CategoryViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		FC98BDDCB6D4B739AD34CED2 /* Pods */ = {
@@ -250,6 +264,8 @@
 				7426FB3E1E06E88400FB6216 /* AddPizzaViewController.swift in Sources */,
 				74B571B91E05A2160034047E /* PizzaView.swift in Sources */,
 				743135D61E005A8600984253 /* AppDelegate.swift in Sources */,
+				747786071E27F48500C65AE0 /* CategoryViewCell.swift in Sources */,
+				747785ED1E25547100C65AE0 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

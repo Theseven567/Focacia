@@ -13,27 +13,39 @@ class PizzasViewController: UIViewController {
     
     var pizzas = [PizzaView]()
     
+    var childToLoad:String?
+    
     @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var addPizzaButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-              load()
-    }
 
+
+   
+
+    override func viewDidLoad() {
+        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        super.viewDidLoad()
+        print(childToLoad ?? "noneyet")
+        load()
+    }
 
 
 
     func load(){
         let xOrigin = self.view.frame.width
         var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference().child("Food").child("Pizza")
+        if childToLoad == nil{
+            childToLoad = "Pizza"
+        }
+        ref = FIRDatabase.database().reference().child("Food").child(childToLoad!)
         ref.observe(.value, with: { (snapshot) in
             var placer:CGFloat = 0
+            // Deleting and reloading all the views
             for view in self.scrollView.subviews{
                 view.removeFromSuperview()
             }
+            
             let enumerator = snapshot.children
             while let snap = enumerator.nextObject() as? FIRDataSnapshot{
                 if let val = snap.value as? [String: String]{
