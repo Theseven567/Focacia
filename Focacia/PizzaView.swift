@@ -23,7 +23,6 @@ class PizzaView: UIView {
                 let picName = val["picName"]
                 FIRStorage.storage().reference().child(picName!).delete { error in
                     if error != nil {
-                        // Uh-oh, an error occurred!
                     } else {
                         ref.removeValue()
                         self.removeFromSuperview()

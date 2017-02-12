@@ -26,7 +26,6 @@ class PizzasViewController: UIViewController {
     override func viewDidLoad() {
         self.navigationController?.navigationBar.barTintColor = UIColor.red
         super.viewDidLoad()
-        print(childToLoad ?? "noneyet")
         load()
     }
 
@@ -63,22 +62,6 @@ class PizzasViewController: UIViewController {
             }
             
         })
-        
-//        ref.observe(.childAdded, with: { (snapshot) in
-//            print("Yoy child added")
-//            if let val = snapshot.value as? [String: String]{
-//                let tempView =  PizzaView(frame: CGRect(x: placer * xOrigin, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-//                tempView.ingredients.text? = val["ingredients"] ?? "No ingredients"
-//                tempView.name.text? = val["name"] ?? "Noname"
-//                tempView.image.sd_setImage(with: URL(string: val["pic"]!))
-//                tempView.image.layer.masksToBounds = false
-//                tempView.image.layer.cornerRadius = tempView.image.frame.height/2
-//                tempView.image.clipsToBounds = true
-//                self.scrollView.contentSize.width += self.view.frame.width
-//                self.scrollView.addSubview(tempView)
-//            }
-//        })
-
     }
     
   

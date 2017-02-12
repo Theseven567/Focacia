@@ -17,6 +17,7 @@ class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var ingredientsField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
     var pickerView = UIPickerView()
     var Categories = [String]()
     
@@ -24,14 +25,13 @@ class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         loadCategories()
         let addImageTap = UITapGestureRecognizer(target: self, action: #selector(self.handleAdd(sender:)))
-        
         addImageTap.delegate = self
         imageView.addGestureRecognizer(addImageTap)
         imageView.isUserInteractionEnabled = true
-        
         pickerView.delegate = self
         pickerView.dataSource = self
         categoryTextField.inputView = pickerView
+        configureKeyboard()
     }
     
     
@@ -43,8 +43,8 @@ class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate,
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
     }
-
-
+    
+    
     @IBAction func dissmissView(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
         
@@ -52,10 +52,8 @@ class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func dismissKeyboard(){
         self.view.endEditing(false)
-        pickerView.isHidden = true
     }
     
-    @IBOutlet weak var imageView: UIImageView!
     
     func handleAdd(sender: UITapGestureRecognizer? = nil) {
         let picker = UIImagePickerController()
@@ -66,7 +64,6 @@ class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("Picker canceled")
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -115,17 +112,16 @@ class AddPizzaViewController: UIViewController, UIImagePickerControllerDelegate,
             uploadMetadata.contentType = "image/jpeg"
             storageRef.put(UIImageJPEGRepresentation(imageView.image!, 0.6)!, metadata: uploadMetadata) { (metadata,error) in
                 if error == nil {
-                    print("Uploaded")
                     let post = ["picName" : "\(photoName).jpg",
-                                "name" : self.nameField.text ?? "None",
-                                "ingredients" : self.ingredientsField.text ?? "No ingredients",
-                                "pic" : metadata?.downloadURL()?.absoluteString ?? "didnt get the link"]
+                        "name" : self.nameField.text ?? "None",
+                        "ingredients" : self.ingredientsField.text ?? "No ingredients",
+                        "pic" : metadata?.downloadURL()?.absoluteString ?? "didnt get the link"]
                     ref.child(post["name"]!).setValue(post)
                 }else{
                     print("Here is some \(metadata)")
                 }
                 indicator.removeFromSuperview()
-            self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
             //
         }else{

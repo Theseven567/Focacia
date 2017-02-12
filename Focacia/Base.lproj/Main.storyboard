@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mxD-qG-kiI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mxD-qG-kiI">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -91,6 +91,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yBh-20-7aq">
                         <barButtonItem key="leftBarButtonItem" title="Categories" id="jLM-qw-Qdx">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="uUW-wx-Fls" kind="show" id="T6f-XO-j5O"/>
                             </connections>
@@ -277,6 +278,6 @@
         <image name="exportimg" width="480" height="280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sAc-ay-wxq"/>
+        <segue reference="lfN-n8-sfq"/>
     </inferredMetricsTieBreakers>
 </document>
